@@ -20,8 +20,19 @@ class _TweenDemoState extends State<TweenDemo> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TweenAnimationBuilder(
-              tween: ColorTween(begin: Colors.white, end: newColor),
+              tween: IntTween(begin: 0, end: 'Tween Demo'.length),
               duration: Duration(seconds: 1),
+              builder: (context, value, child) {
+                return Text(
+                  'Tween Demo'.substring(0, value),
+                  style: TextStyle(fontSize: 40),
+                );
+              },
+            ),
+            SizedBox(height: 30),
+            TweenAnimationBuilder(
+              tween: ColorTween(begin: Colors.white, end: newColor),
+              duration: Duration(milliseconds: 200),
               curve: Curves.bounceOut,
               builder: (context, color, child) {
                 return ColorFiltered(
