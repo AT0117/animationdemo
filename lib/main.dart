@@ -13,6 +13,7 @@ class AnimationDemo extends StatelessWidget {
     return MaterialApp(
       title: 'Animations Demo',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
       home: HomePage(),
     );
   }
